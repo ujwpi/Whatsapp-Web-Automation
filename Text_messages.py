@@ -9,11 +9,11 @@ driver = webdriver.Chrome(options = options)
 DRIVER_PATH = 'C:\Windows\chromedriver_win32\chromedriver.exe'
 driver = webdriver.Chrome(executable_path = DRIVER_PATH)
 
-ph_no = ['9704666396']
+ph_no = ['xxxxxxxxxx', 'yyyyyyyyyy'] #Add a list of phone numbers
 
 for i in range(len(ph_no)):
     driver.get('https://web.whatsapp.com/send?phone=+91'+str(ph_no[i]))
-###########Edit Option Available Above###############
+    
     button = driver.find_element_by_xpath('//*[@id="action-button"]')
     driver.implicitly_wait(3)
     ActionChains(driver).move_to_element(button).click(button).perform()
@@ -21,11 +21,9 @@ for i in range(len(ph_no)):
     driver.find_element_by_xpath('//*[@id="fallback_block"]/div/div/a').click()
     time.sleep(16)
 
-###########Edit the code below###############
-#add your message here without removing the +'\n'
+#Add your message here
     message = """ <drop your DM here>"""
     link = """<drop your invite link here>"""
-###########Edit the code above###############
 
     message += '\n'
     textBox = driver.find_element_by_xpath('//*[@id="main"]/footer/div[1]/div[2]/div/div[2]')
