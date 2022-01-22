@@ -9,13 +9,11 @@ driver = webdriver.Chrome(options = options)
 DRIVER_PATH = 'C:\Windows\chromedriver_win32\chromedriver.exe'
 driver = webdriver.Chrome(executable_path = DRIVER_PATH)
 
-file_path = "C:/Users/hp/OneDrive/Desktop/progs/whatsapp/xxx.jpg" #file path
-ph_no = ['9704666396']
+file_path = "C:/Users/hp/OneDrive/Desktop/progs/whatsapp/pic.jpg" #file path
+ph_no = ['xxxxxxxxxx', 'yyyyyyyyyy'] #Add a list of phone numbers
 
 for i in range(len(ph_no)):
     driver.get('https://web.whatsapp.com/send?phone=+91'+str(ph_no[i]))
-###########Edit Option Available Above###############
-    time.sleep(6)
 
     attachment_section = driver.find_element_by_xpath('//div[@title = "Attach"]')
     attachment_section.click()
